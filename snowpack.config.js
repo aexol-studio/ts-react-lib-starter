@@ -5,14 +5,11 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
     // mount: {},
-    plugins: [['@snowpack/plugin-typescript', { tsc: 'ttsc --build tsconfig.build.json' }]],
+    plugins: [['@snowpack/plugin-typescript', { tsc: 'ttsc', args: ' --project tsconfig.build.json' }]],
     // installOptions: {},a
     // devOptions: {},
     // buildOptions: {},
     alias: {
-        '@/*': './src/*',
-    },
-    experiments: {
-        routes: [{ src: '/.*', dest: './src/__sandbox__/index.html' }],
+        '@/': './src/',
     },
 };
